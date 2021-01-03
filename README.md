@@ -1,5 +1,3 @@
-![](preview.gif)
-
 # Prerequisites
 - Font should be a [Nerd font](https://www.nerdfonts.com/) for the icons to render, else they would look like blank boxes
 # 
@@ -17,3 +15,4 @@ and use the command `sudo chmod +x ./ghinfo` to make the exe executable by the u
 
 You can also move the exe (after making it executable through the above command) in the directory `/usr/bin` to make it a command, hence you can run it like `ghinfo username`
 
+![](preview.gif)
