@@ -1,3 +1,5 @@
+![](preview-2021-01-03_19.19.15.mp4)
+
 # Prerequisites
 - Font should be a [Nerd font](https://www.nerdfonts.com/) for the icons to render, else they would look like blank boxes
 # 
