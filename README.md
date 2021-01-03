@@ -1,3 +1,5 @@
+![](preview.gif)
+
 # Prerequisites
 - Font should be a [Nerd font](https://www.nerdfonts.com/) for the icons to render, else they would look like blank boxes
 # 
