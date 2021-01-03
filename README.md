@@ -5,7 +5,7 @@
 
 
 ## Running through the python file
-To run from the python file, you must have [Python 3.8+](https://www.python.org/downloads/) installed, then after cloning the repo, (git clone https://github.com/saiTama-max/github-userinfo.git),
+To run from the python file, you must have [Python 3.8](https://www.python.org/downloads/) installed, then after cloning the repo, (git clone https://github.com/saiTama-max/github-userinfo.git),
 you can cd to the folder `cd github-userinfo`, and run through `python ghinfo.py username` or `python3 ghinfo.py username`
 # 
 
