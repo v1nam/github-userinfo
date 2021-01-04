@@ -114,7 +114,7 @@ def main():
 
         for c in itertools.cycle(loading_ls[0]):
             if not is_done:
-                sys.stdout.write(f"{warn}\rFetching info " + c + end)
+                sys.stdout.write(f"{warn}\r{c} Fetching info " + end)
                 sys.stdout.flush()
                 time.sleep(loading_ls[1])
             else:
