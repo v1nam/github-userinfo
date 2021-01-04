@@ -1,9 +1,12 @@
 import requests
 import argparse
+
 import sys
 import itertools
 import time
 import os
+import random
+
 from concurrent import futures
 from collections import Counter
 
@@ -76,7 +79,7 @@ username = uname_parse.parse_args().username
 
 is_done = False
 
-loading_ls = [
+loading_ls1 = [
     "[=    ]",
     "[ =   ]",
     "[  =  ]",
@@ -84,8 +87,14 @@ loading_ls = [
     "[    =]",
 ]
 
-loading_ls += loading_ls[::-1]
+loading_ls1 += loading_ls1[::-1]
+loading_ls1 = (loading_ls1, 0.15)
 
+loading_ls2 = (["⠧", "⠏", "⠹", "⠼"], 0.15)
+loading_ls3 = (["⠾", "⠽", "⠻", "⠯", "⠷"], 0.12)
+loading_ls4 = (["|", "/", "-", "\\"], 0.1)
+
+loading_ls = random.choice((loading_ls1, loading_ls2, loading_ls3, loading_ls4))
 
 def thread_func():
     global is_done
@@ -103,11 +112,11 @@ def main():
     with futures.ThreadPoolExecutor() as executor:
         future = executor.submit(thread_func)
 
-        for c in itertools.cycle(loading_ls):
+        for c in itertools.cycle(loading_ls[0]):
             if not is_done:
                 sys.stdout.write(f"{warn}\rFetching info " + c + end)
                 sys.stdout.flush()
-                time.sleep(0.12)
+                time.sleep(loading_ls[1])
             else:
                 sys.stdout.write(f'\r{" "*21}')
                 sys.stdout.flush()
