@@ -102,6 +102,7 @@ def thread_func():
     url = f"https://api.github.com/users/{username}"
     info_response = requests.get(url)
     repo_resp = ""
+    star_resp = ""
     if info_response.json().get("message") is None:
         repo_resp = requests.get(info_response.json()["repos_url"])
         star_resp = requests.get(f"{url}/starred")
