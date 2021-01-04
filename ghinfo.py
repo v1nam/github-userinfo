@@ -9,6 +9,7 @@ import random
 
 from concurrent import futures
 from collections import Counter
+from bs4 import BeautifulSoup
 
 success = "\033[92m"
 fail = "\033[91m"
@@ -103,8 +104,9 @@ def thread_func():
     repo_resp = ""
     if info_response.json().get("message") is None:
         repo_resp = requests.get(info_response.json()["repos_url"])
+        star_resp = requests.get(f"{url}/starred")
     is_done = True
-    return info_response, repo_resp
+    return info_response, repo_resp, star_resp
 
 
 def main():
@@ -131,7 +133,10 @@ def main():
 
     else:
         repos = val[1].json()
+        stars = len(val[2].json())
         print(f"\n{success} Success!{end}\n")
+        
+        forks = len([repo["fork"] for repo in repos if repo["fork"]])
 
         created_at = info_dict.get("created_at")
 
@@ -145,6 +150,8 @@ def main():
             f"{blue}{end} Following": f"{info_dict.get('following')}",
             " Creation Date": f"{created_at[:created_at.find('T')]}",
             f"{cyan} {end}Most used language": get_lang(repos),
+            f"{warn} {end}Stars": stars,
+            f"{cyan} {end}Forks": forks,
             f"{yellow}{end} Description": f"\n{info_dict.get('bio')}",
         }
 
