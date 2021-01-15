@@ -9,7 +9,6 @@ import random
 
 from concurrent import futures
 from collections import Counter
-from bs4 import BeautifulSoup
 
 success = "\033[92m"
 fail = "\033[91m"
