@@ -15,4 +15,4 @@ and use the command `sudo chmod +x ./ghinfo` to make the exe executable by the u
 
 You can also move the exe (after making it executable through the above command) in the directory `/usr/bin` to make it a command, hence you can run it like `ghinfo username`
 
-![](preview.gif)
+![](preview2.gif)
